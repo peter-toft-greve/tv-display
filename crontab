@@ -1,1 +1,23 @@
 
+57 7    * * mon,tue,wed,thu,fri 	service omxplayer  stop
+58 7    * * mon,tue,wed,thu,fri   ln -sf /root/videos/Brand_video.mp4 /root/videos/output.mp4
+59 7    * * mon,tue,wed,thu,fri 	service omxplayer  start
+
+0,1 8	* * mon,tue,wed,thu,fri		echo "on 0" | cec-client -s
+0 18	* * mon,tue,wed,thu,fri		echo "standby 0" | cec-client -s
+
+53 11 * * mon,tue,wed,thu,fri service omxplayer stop
+55 11 * * mon,tue,wed,thu,fri mpg123 -Z /root/music/*
+
+54 11 * * mon ln -sf /root/videos/fit/Mandag.mp4   /root/videos/output.mp4
+54 11 * * tue ln -sf /root/videos/fit/Tirsdag.mp4  /root/videos/output.mp4
+54 11 * * wed ln -sf /root/videos/fit/Onsdag.mp4   /root/videos/output.mp4
+54 11 * * thu ln -sf /root/videos/fit/Torsdag.mp4  /root/videos/output.mp4
+54 11 * * fri ln -sf /root/videos/fit/Fredag.mp4   /root/videos/output.mp4
+
+55 11 * * mon,tue,wed,thu,fri service omxplayer  start
+
+10 12 * * mon,tue,wed,thu,fri service omxplayer  stop
+10 12 * * mon,tue,wed,thu,fri ln -sf /root/videos/Brand_video.mp4 /root/videos/output.mp4
+11 12 * * mon,tue,wed,thu,fri service omxplayer  start
+10 12 * * mon,tue,wed,thu,fri killall mpg123
