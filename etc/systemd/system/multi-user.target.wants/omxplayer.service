@@ -13,5 +13,5 @@ Type=simple
 User=root
 
 ExecStop=/usr/bin/killall omxplayer
-User=pi
+User=root
 
