@@ -1,0 +1,16 @@
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+Description=Dirac videos
+Before=systemd-user-sessions.service
+
+[Service]
+TimeoutStartSec=0
+
+ExecStart=/usr/bin/omxplayer -o local -r --loop --vol -6000  /root/videos/output.mp4
+Type=simple
+User=root
+
+ExecStop=/usr/bin/killall omxplayer
+User=root
